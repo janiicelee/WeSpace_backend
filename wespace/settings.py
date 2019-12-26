@@ -39,7 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'corsheaders',
+<<<<<<< HEAD
     'account'
+=======
+    'space',
+>>>>>>> master
 ]
 
 MIDDLEWARE = [
