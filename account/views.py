@@ -16,6 +16,7 @@ class AccountsView(View):
         try:
             if len(data['password']) < 6 :
                 return JsonResponse({'message':'TOO_SHORT'}, status = 400)
+
             validate_email(data['email'])
             hashed_password = bcrypt.hashpw(data['password'].encode('utf-8'),bcrypt.gensalt())
             
@@ -24,6 +25,7 @@ class AccountsView(View):
                     email     = data['email'],
                     password  = data['password']
                     ).save()
+
             return JsonResponse({'message':'SUCCESS'}, status = 200)
         
         except KeyError:
@@ -34,6 +36,7 @@ class AccountsView(View):
         
         except TypeError:
             return JsonResponse({'message':'WRONG_INPUT_VALUE'}, status = 400)
+
         except ValidationError:
             return JsonResponse({'message':'NOT_AN_EMAIL'}, status = 400)
 
