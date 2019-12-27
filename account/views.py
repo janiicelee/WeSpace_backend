@@ -16,7 +16,7 @@ class AccountsView(View):
 
         try:
             if len(data['password']) < 6 :
-                return JsonResponse({'message':'TOO_SHORT'}, status = 400)
+                return JsonResponse({'message':'SHORT_PASSWORD'}, status = 400)
 
             validate_email(data['email'])
             hashed_password = bcrypt.hashpw(data['password'].encode('utf-8'),bcrypt.gensalt())
@@ -47,7 +47,7 @@ class AuthView(View):
 
         try:
             if len(data['password']) < 6 :
-                return JsonResponse({'message':'TOO_SHORT'}, status = 400)
+                return JsonResponse({'message':'SHORT_PASSWORD'}, status = 400)
 
             user = Accounts.objects.get(email = data['email'])
             if bcrypt.checkpw(data['password'].encode('utf-8'),user.password.encode('utf-8')):
