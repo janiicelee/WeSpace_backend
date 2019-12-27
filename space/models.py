@@ -32,3 +32,12 @@ class Space_Categories(models.Model):
 
     class Meta:
         db_table = 'space_categories'
+
+
+class Categories_Space(models.Model):
+    space = models.ForeignKey(Spaces, on_delete=models.SET_NULL, null=True)
+    space_category = models.ForeignKey(
+        Space_Categories, on_delete=models.SET_NULL, null=True)
+
+    class Meta:
+        db_table = 'categories_space'
