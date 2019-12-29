@@ -5,6 +5,7 @@ from account.models import Hosts
 class Spaces(models.Model):
     title = models.CharField(max_length=100)
     short_intro = models.CharField(max_length=200)
+    price = models.DecimalField(max_digits=12, decimal_places=2)
     long_intro = models.TextField()
     open_time = models.DateTimeField()
     close_time = models.DateTimeField()
