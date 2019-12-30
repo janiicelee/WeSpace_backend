@@ -30,6 +30,16 @@ class Amenities(models.Model):
         db_table = 'amenities'
 
 
+class Holiday(models.Model):
+    holiday = models.DateTimeField()
+    space = models.ForeignKey('Spaces', on_delete=models.SET_NULL, null=True)
+    create_at = models.DateTimeField(auto_now_add=True)
+    update_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        db_table = 'holiday'
+
+
 class Space_Categories(models.Model):
     category = models.CharField(max_length=200)
     create_at = models.DateTimeField(auto_now_add=True)
