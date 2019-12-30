@@ -8,11 +8,14 @@ class Spaces(models.Model):
     short_intro = models.CharField(max_length=200)
     price = models.DecimalField(max_digits=12, decimal_places=2)
     long_intro = models.TextField()
+    host = models.ForeignKey(
+        'account.Hosts', on_delete=models.SET_NULL, null=True)
     open_time = models.CharField(max_length=10)
     close_time = models.CharField(max_length=10)
-    host = models.ForeignKey(Hosts, on_delete=models.SET_NULL, null=True)
     create_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)
+    amenity_space = models.ManyToManyField(
+        'Amenities', through='Space_Amenities')
 
     class Meta:
         db_table = 'spaces'
@@ -34,6 +37,18 @@ class Space_Categories(models.Model):
 
     class Meta:
         db_table = 'space_categories'
+
+
+class Space_Amenities(models.Model):
+    amenity = models.ForeignKey(
+        'Amenities', on_delete=models.SET_NULL, null=True)
+    space = models.ForeignKey(
+        'Spaces', on_delete=models.SET_NULL, null=True)
+    create_at = models.DateTimeField(auto_now_add=True)
+    update_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        db_table = 'space_amenities'
 
 
 class Qeustion(models.Model):
