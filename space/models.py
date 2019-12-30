@@ -1,8 +1,9 @@
 from django.db import models
-from account.models import Hosts
+# from account.models import Hosts
 
 
 class Spaces(models.Model):
+    from account.models import Hosts
     title = models.CharField(max_length=100)
     short_intro = models.CharField(max_length=200)
     long_intro = models.TextField()
