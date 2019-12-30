@@ -32,3 +32,13 @@ class Space_Categories(models.Model):
 
     class Meta:
         db_table = 'space_categories'
+
+
+class Images(models.Model):
+    space_image = models.URLField(max_length=2500)
+    space = models.ForeignKey(Spaces, on_delete=models.SET_NULL, null=True)
+    create_at = models.DateTimeField(auto_now_add=True)
+    update_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        db_table = 'images'
