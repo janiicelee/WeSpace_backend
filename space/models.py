@@ -56,6 +56,7 @@ class Categories_Space(models.Model):
         Space_Categories,
         on_delete=models.SET_NULL,
         null=True)
+    space = models.ForeignKey(Spaces, on_delete=models.SET_NULL, null=True)
     create_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)
 
