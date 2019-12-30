@@ -1,4 +1,5 @@
 from django.db import models
+from account.models import Hosts
 
 
 class Spaces(models.Model):
@@ -8,7 +9,7 @@ class Spaces(models.Model):
     open_time = models.DateTimeField()
     close_time = models.DateTimeField()
     host = models.ForeignKey(
-        'account.Hosts',
+        Hosts,
         on_delete=models.SET_NULL,
         null=True)
     create_at = models.DateTimeField(auto_now_add=True)
@@ -39,7 +40,7 @@ class Space_Categories(models.Model):
 class Images(models.Model):
     space_image = models.URLField(max_length=2500)
     space = models.ForeignKey(
-        'Spaces',
+        Spaces,
         on_delete=models.SET_NULL,
         null=True)
     create_at = models.DateTimeField(auto_now_add=True)
@@ -52,7 +53,7 @@ class Images(models.Model):
 class Categories_Space(models.Model):
     space = models.ForeignKey(Spaces, on_delete=models.SET_NULL, null=True)
     space_category = models.ForeignKey(
-        'Space_Categories',
+        Space_Categories,
         on_delete=models.SET_NULL,
         null=True)
     create_at = models.DateTimeField(auto_now_add=True)
