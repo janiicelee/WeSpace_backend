@@ -36,6 +36,19 @@ class Space_Categories(models.Model):
         db_table = 'space_categories'
 
 
+class Qeustion(models.Model):
+    space = models.ForeignKey(
+        'Spaces', on_delete=models.SET_NULL, null=True)
+    user = models.ForeignKey(
+        'account.Accounts', on_delete=models.SET_NULL, null=True)
+    content = models.TextField()
+    create_at = models.DateTimeField(auto_now_add=True)
+    update_at = models.DateTimeField(auto_now=True)
+
+    class Mata:
+        db_table = 'question'
+
+
 class Reviews(models.Model):
     user = models.ForeignKey(Accounts, on_delete=models.SET_NULL, null=True)
     space = models.ForeignKey(Spaces, on_delete=models.SET_NULL, null=True)
