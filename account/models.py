@@ -28,8 +28,21 @@ class Hosts(models.Model):
         db_table = 'hosts'
 
 
-class Likes(models.Model):
+class Reservations(models.Model):
+    user = models.ForeignKey(
+        'Accounts', on_delete=models.SET_NULL, null=True)
+    confirm = models.BooleanField(null=True)
+    space = models.ForeignKey(
+        'space.Spaces', on_delete=models.SET_NULL, null=True)
+    host = models.ForeignKey('Hosts', on_delete=models.SET_NULL, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
+    class Meta:
+        db_table = 'reservations'
+
+
+class Likes(models.Model):
     user = models.ForeignKey('Accounts', on_delete=models.SET_NULL, null=True)
     space = models.ForeignKey(
         'space.Spaces', on_delete=models.SET_NULL, null=True)
