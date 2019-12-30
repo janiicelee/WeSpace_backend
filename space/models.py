@@ -6,13 +6,11 @@ class Spaces(models.Model):
     from account.models import Hosts
     title = models.CharField(max_length=100)
     short_intro = models.CharField(max_length=200)
+    price = models.DecimalField(max_digits=12, decimal_places=2)
     long_intro = models.TextField()
-    open_time = models.DateTimeField()
-    close_time = models.DateTimeField()
-    host = models.ForeignKey(
-        Hosts,
-        on_delete=models.SET_NULL,
-        null=True)
+    open_time = models.CharField(max_length=10)
+    close_time = models.CharField(max_length=10)
+    host = models.ForeignKey(Hosts, on_delete=models.SET_NULL, null=True)
     create_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)
 
