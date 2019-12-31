@@ -3,11 +3,11 @@ from account.models import Hosts, Accounts
 
 
 class Spaces(models.Model):
-    from account.models import Hosts
     title = models.CharField(max_length=100)
     short_intro = models.CharField(max_length=200)
     price = models.DecimalField(max_digits=12, decimal_places=2)
     long_intro = models.TextField()
+    location = models.CharField(max_length=300)
     host = models.ForeignKey(
         'account.Hosts', on_delete=models.SET_NULL, null=True)
     open_time = models.CharField(max_length=10)
