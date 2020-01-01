@@ -12,8 +12,6 @@ class Spaces(models.Model):
         'account.Hosts', on_delete=models.SET_NULL, null=True)
     open_time = models.CharField(max_length=10)
     close_time = models.CharField(max_length=10)
-    min_time = models.CharField(max_length=10)
-    min_guest = models.CharField(max_length=10)
     create_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)
     amenity_space = models.ManyToManyField(
