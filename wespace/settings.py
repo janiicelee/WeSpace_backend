@@ -32,8 +32,8 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
-#    'django.contrib.admin',
-#   'django.contrib.auth',
+    #  'django.contrib.admin',
+    #  'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -48,8 +48,8 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'corsheaders.middleware.CorsMiddleware',
-   # 'django.middleware.csrf.CsrfViewMiddleware',
-   # 'django.contrib.auth.middleware.AuthenticationMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
@@ -119,10 +119,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-##Disable_slash
+# Disable_slash
 APPEND_SLASH = False
-##CORS
-CORS_ORIGIN_ALLOW_ALL=True
+# CORS
+CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOW_METHODS = (
     'DELETE',
@@ -142,5 +142,4 @@ CORS_ALLOW_HEADERS = (
     'user-agent',
     'x-csrftoken',
     'x-requested-with',
-    )
-
+)
