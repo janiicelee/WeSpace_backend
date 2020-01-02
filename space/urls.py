@@ -4,5 +4,5 @@ urlpatterns = [
     path('', CategoryView.as_view()),
     path('/recommend', RecommendView.as_view()),
     path('/editor', EditorView.as_view()),
-    path('space/<int:space_id>', DetailSpaceView.as_view())
+    path('/<int:space_id>', DetailSpaceView.as_view())
 ]
