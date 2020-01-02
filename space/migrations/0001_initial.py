@@ -62,11 +62,8 @@ class Migration(migrations.Migration):
                 ('price', models.DecimalField(decimal_places=2, max_digits=12)),
                 ('long_intro', models.TextField()),
                 ('location', models.CharField(max_length=300)),
-                << << << < HEAD
                 ('min_time', models.CharField(max_length=10, null=True)),
                 ('min_guest', models.CharField(max_length=10, null=True)),
-                == == == =
-                >>>>>> > master
                 ('open_time', models.CharField(max_length=10)),
                 ('close_time', models.CharField(max_length=10)),
                 ('create_at', models.DateTimeField(auto_now_add=True)),
