@@ -1,5 +1,6 @@
 from django.urls import path
-from .views import CategoryView
+from .views import CategoryView, DetailSpaceView
 urlpatterns = [
     path('', CategoryView.as_view()),
+    path('<int:space_id>', DetailSpaceView.as_view())
 ]
