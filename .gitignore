@@ -1,8 +1,10 @@
 my_settings.py
 crawling.py
 *.csv
+tag.csv
 tag.py
 image.py
+notice.py
 
 # Created by https://www.gitignore.io/api/vim,linux,python,django
 # Edit at https://www.gitignore.io/?templates=vim,linux,python,django
