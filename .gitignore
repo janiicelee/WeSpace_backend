@@ -4,6 +4,8 @@ crawling.py
 tag.csv
 tag.py
 image.py
+asdf.py
+crawl_1.py
 notice.py
 
 # Created by https://www.gitignore.io/api/vim,linux,python,django
