@@ -1,7 +1,7 @@
 from django.views import View
 from django.http import JsonResponse
 
-from .models import Spaces, Space_Categories
+from .models import *
 
 
 class CategoryView(View):
