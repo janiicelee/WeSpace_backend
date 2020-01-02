@@ -10,6 +10,8 @@ class Spaces(models.Model):
     location = models.CharField(max_length=300)
     host = models.ForeignKey(
         'account.Hosts', on_delete=models.SET_NULL, null=True)
+    min_time = models.CharField(max_length=10, null=True)
+    min_guest = models.CharField(max_length=10, null=True)
     open_time = models.CharField(max_length=10)
     close_time = models.CharField(max_length=10)
     create_at = models.DateTimeField(auto_now_add=True)
