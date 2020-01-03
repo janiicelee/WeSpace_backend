@@ -4,8 +4,8 @@ from django.views import View
 from django.http import JsonResponse
 
 from .models import Spaces, Space_Categories, Images
-from account.models import Hosts, Reservations
-from account.utils import host_decorator
+from account.models import Hosts, Reservations, Accounts
+from account.utils import host_decorator, login_decorator
 
 
 class CategoryView(View):
@@ -93,3 +93,31 @@ class Registration(View):
             return JsonResponse({'result': 'value Error'}, status=400)
         except Hosts.DoesNotExist:
             return JsonResponse({'result': 'does not exist host'}, status=400)
+
+
+class Reservation(View):
+    @login_decorator
+    def post(self, request):
+        try:
+            data = json.loads(request.body)
+            Reservations(
+                user_id=request.account.id,
+                space_id=data['space_id'],
+                host_id=data['host_id'],
+                year=str(data['year']),
+                month=str(data['month']),
+                day=str(data['day']),
+                hour=data['hour']
+            ).save()
+
+            return JsonResponse({'result': 'insert success'}, status=200)
+        except KeyError:
+            return JsonResponse({'result': 'incorrect key'}, status=400)
+        except ValueError:
+            return JsonResponse({'result': 'value Error'}, status=400)
+        except Hosts.DoesNotExist:
+            return JsonResponse({'result': ' host does not exist'}, status=400)
+        except Spaces.DoesNotExist:
+            return JsonResponse({'result': 'spaces do not exist '}, status=400)
+        except Accounts.DoesNotExist:
+            return JsonResponse({'result': ' user does not exist '}, status=400)
