@@ -88,3 +88,4 @@ class Registration(View):
         except KeyError:
             return JsonResponse({'result': 'incorrect key'}, status=400)
         except:
+            return JsonResponse({'result': 'error'}, status=400)

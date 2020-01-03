@@ -10,7 +10,7 @@ from django.core.validators import validate_email
 from django.core.exceptions import ValidationError
 
 from .models import Accounts
-
+from account.utils import login_decorator 
 
 class AccountsView(View):
     def post(self, request):
@@ -72,3 +72,6 @@ class AuthView(View):
 
         except ValidationError:
             return JsonResponse({'message': 'NOT_AN_EMAIL'}, status=400)
+
+
+
