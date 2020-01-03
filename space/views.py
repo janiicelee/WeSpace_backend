@@ -89,5 +89,7 @@ class Registration(View):
             return JsonResponse({'result': 'insert success'}, status=200)
         except KeyError:
             return JsonResponse({'result': 'incorrect key'}, status=400)
-        except:
-            return JsonResponse({'result': 'error'}, status=400)
+        except ValueError:
+            return JsonResponse({'result': 'value Error'}, status=400)
+        except Hosts.DoesNotExist:
+            return JsonResponse({'result': 'does not exist host'}, status=400)
