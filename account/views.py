@@ -73,9 +73,5 @@ class AuthView(View):
         except ValidationError:
             return JsonResponse({'message': 'NOT_AN_EMAIL'}, status=400)
 
-class Decorator(View):
-    @login_decorator
-    def get(self, request):
-        return JsonResponse({'nick_name' : request.account.nick_name})
 
 
