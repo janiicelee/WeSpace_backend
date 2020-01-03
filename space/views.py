@@ -5,6 +5,7 @@ from django.http import JsonResponse
 
 from .models import Spaces, Space_Categories, Images
 from account.models import Hosts, Reservations
+from account.utils import host_decorator
 
 
 class CategoryView(View):
@@ -68,6 +69,7 @@ class DetailSpaceView(View):
 
 
 class Registration(View):
+    @host_decorator
     def post(self, request):
         try:
             data = json.loads(request.body)
@@ -77,7 +79,7 @@ class Registration(View):
                 long_intro=data['long_intro'],
                 price=data['price'],
                 location=data['location'],
-                host_id=2,
+                host_id=request.host.id,
                 min_time=data['min_time'],
                 min_guest=data['min_guest'],
                 open_time=data['open_time'],
