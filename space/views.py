@@ -17,7 +17,7 @@ class CategoryView(View):
 
 class RecommendView(View):
     def get(self, request):
-        spaces = list(Spaces.objects.all())[:5]
+        spaces = list(Spaces.objects.all())[:6]
         recommend = [{
             'title': space.title,
             'price': space.price,
@@ -32,7 +32,7 @@ class EditorView(View):
     def get(self, request):
         spaces = list(Spaces.objects.all())
         editor = [{
-            'image': list(space.images_set.filter(space_id=space.id).values('space_image')),
+            'image': list(space.images_set.filter(space_id=space.id).values_list('space_image', flat=True)),
             'tag': list(space.tags_set.filter(space_id=space.id).values('tag')),
             'title': space.title,
             'price': space.price,

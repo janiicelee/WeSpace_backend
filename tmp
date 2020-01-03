@@ -1,0 +1,4 @@
+spaces = list(Spaces.objects.all())[:6]
+
+
+'image': list(space.images_set.filter(space_id=space.id).values_list('space_image', flat=True)),
