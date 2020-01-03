@@ -1,3 +1,5 @@
+import json
+
 from django.views import View
 from django.http import JsonResponse
 
@@ -63,3 +65,26 @@ class DetailSpaceView(View):
             }
             for space in Spaces.objects.filter(id=space_id)]
         return JsonResponse({'result': space}, status=200)
+
+
+class Registration(View):
+    def post(self, request):
+        try:
+            data = json.loads(request.body)
+            Spaces(
+                title=data['title'],
+                short_intro=data['short_intro'],
+                long_intro=data['long_intro'],
+                price=data['price'],
+                location=data['location'],
+                host_id=2,
+                min_time=data['min_time'],
+                min_guest=data['min_guest'],
+                open_time=data['open_time'],
+                close_time=data['close_time']
+            ).save()
+
+            return JsonResponse({'result': 'insert success'}, status=200)
+        except KeyError:
+            return JsonResponse({'result': 'incorrect key'}, status=400)
+        except:

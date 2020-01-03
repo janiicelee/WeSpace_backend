@@ -4,7 +4,7 @@ import jwt
 
 from wespace.settings import SECRET_KEY
 from django.views import View
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from django.db import IntegrityError
 from django.core.validators import validate_email
 from django.core.exceptions import ValidationError
