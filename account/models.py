@@ -36,6 +36,10 @@ class Reservations(models.Model):
     space = models.ForeignKey(
         'space.Spaces', on_delete=models.SET_NULL, null=True)
     host = models.ForeignKey('Hosts', on_delete=models.SET_NULL, null=True)
+    year = models.CharField(max_length=10)
+    month = models.CharField(max_length=10)
+    day = models.CharField(max_length=10)
+    hour = models.CharField(max_length=300)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
