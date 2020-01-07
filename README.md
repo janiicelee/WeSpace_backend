@@ -19,6 +19,6 @@
 
 <a target="_blank" rel="noopener noreferrer" href="https://github.com/wecode-bootcamp-korea/WeSpace_backend/blob/master/wespace.png"><img src="https://github.com/wecode-bootcamp-korea/WeSpace_backend/raw/master/wespace.png" alt="Database ERD" style="max-width:100%;"></a>
 # Contacts
-- Please feel free to give us any questions or feedback. Thank you.
+- If you have any questions or feedback please contact us via email. Thank you.
 - Sangjin Seo: ttwkor@naver.com 
 - Yerin Lee: meekukin@gmail.com
