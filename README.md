@@ -1,5 +1,5 @@
 # Introduction
-- 2 week project on cloning a website based on a reservation service platform.
+- Website cloning based on a reservation service platform in South Korea.
 (https://www.spacecloud.kr/)
 - Participants: Sangjin Seo, Yerin Lee
 
