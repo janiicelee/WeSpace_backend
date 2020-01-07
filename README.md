@@ -18,7 +18,6 @@
 # DB modeling
 
 <a target="_blank" rel="noopener noreferrer" href="https://github.com/wecode-bootcamp-korea/WeSpace_backend/blob/master/wespace.png"><img src="https://github.com/wecode-bootcamp-korea/WeSpace_backend/raw/master/wespace.png" alt="Database ERD" style="max-width:100%;"></a>
-
 # Contacts
 - Please feel free to give us any questions or feedback. Thank you.
 - Sangjin Seo: ttwkor@naver.com 
