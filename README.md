@@ -14,7 +14,7 @@
 - Reservation service API
 - Letting the host upload spaces
 - Database modeling
-- Web scraping 
+- Scraping data from webpage
 
 # DB modeling
 
