@@ -12,8 +12,9 @@
 - Sign-in / Sign up API
 - Main page API
 - Reservation service API
-- Letting the host upload the spaces
-- Web scraping using bs4
+- Letting the host upload spaces
+- Database modeling
+- Web scraping 
 
 # DB modeling
 
