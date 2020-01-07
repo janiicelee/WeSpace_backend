@@ -17,3 +17,4 @@
 
 # DB modeling
 
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/wecode-bootcamp-korea/WeSpace_backend/blob/master/wespace_erd.png"><img src="https://github.com/wecode-bootcamp-korea/WeSpace_backend/raw/master/wespace_erd.png" alt="Database ERD" style="max-width:100%;"></a>
