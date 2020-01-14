@@ -4,5 +4,5 @@ urlpatterns = [
     path('', AccountsView.as_view()),
     path('/auth', AuthView.as_view()),
     path('/host', HostsView.as_view()),
-    path('/hostauth', HostAuthView.as_view()),
+    path('/host-auth', HostAuthView.as_view()),
 ]
