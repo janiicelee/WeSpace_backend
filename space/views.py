@@ -20,11 +20,12 @@ class CategoryView(View):
 
 class RecommendView(View):
     def get(self, request):
-        spaces = list(Spaces.objects.all())[:6]
+        spaces = list(Spaces.objects.prefetch_related('tags_set').all())[:6]
         recommend = [{
             'title': space.title,
             'price': space.price,
             'location': space.location,
+            'tag': list(space.tags_set.values_list('tag', flat=True)),
             'image': list(space.images_set.filter(space_id=space.id).values('space_image'))
         } for space in spaces]
 
