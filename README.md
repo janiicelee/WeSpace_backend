@@ -22,7 +22,7 @@
 <a target="_blank" rel="noopener noreferrer" href="https://github.com/wecode-bootcamp-korea/WeSpace_backend/blob/master/wespace.png"><img src="https://github.com/wecode-bootcamp-korea/WeSpace_backend/raw/master/wespace.png" alt="Database ERD" style="max-width:100%;"></a>
 
 # Demo
-<a target="_blank" rel="noopener noreferrer" href="https://github.com/wecode-bootcamp-korea/WeSpace_backend/blob/master/wespace_screenshot.png"><img src="https://github.com/wecode-bootcamp-korea/WeSpace_backend/raw/master/wespace_screenshot.png" alt="front image" style="max-width:100%;"></a>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/meekukin/WeSpace_backend/blob/master/wespace_screenshot.png"><img src="https://github.com/meekukin/WeSpace_backend/raw/master/wespace_screenshot.png" alt="front image" style="max-width:100%;"></a>
 
 Front-end git: https://github.com/wecode-bootcamp-korea/WeSpace_frontend)
 
