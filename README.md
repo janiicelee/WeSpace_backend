@@ -24,7 +24,7 @@
 # Demo
 <a target="_blank" rel="noopener noreferrer" href="https://github.com/meekukin/WeSpace_backend/blob/master/wespace_screenshot.png"><img src="https://github.com/meekukin/WeSpace_backend/raw/master/wespace_screenshot.png" alt="front image" style="max-width:100%;"></a>
 
-Front-end git: https://github.com/wecode-bootcamp-korea/WeSpace_frontend)
+[Front-end](https://github.com/wecode-bootcamp-korea/WeSpace_frontend) git
 
 # Contacts
 - Yerin Lee: meekukin@gmail.com
