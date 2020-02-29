@@ -1,24 +1,26 @@
 # Introduction
-- Website cloning based on a reservation service platform in South Korea.
-(https://www.spacecloud.kr/)
-- Participants: Sangjin Seo, Yerin Lee
+- Website cloning project.(https://www.spacecloud.kr/)
+- One of the space reservation services in South Korea.
 
 # Built with
-- Django
-- Python
-- MySQL
+- Python, Django, MySQL, Workbench
+- Bcrypt, JWT
+- RESTful API
+- BeautifulSoup4, Selenium
 
 # Features
-- Sign-in / Sign up API
+- Sign-in / Sign-up API
+- Password Hashing using bcrypt
+- Authorization and authentication using JWT
 - Main page API
 - Reservation service API
 - Letting the host upload spaces
-- Database modeling
-- Scraping data from webpage
+- Data modeling(RDBMS)
 
 # DB modeling
 
 <a target="_blank" rel="noopener noreferrer" href="https://github.com/wecode-bootcamp-korea/WeSpace_backend/blob/master/wespace.png"><img src="https://github.com/wecode-bootcamp-korea/WeSpace_backend/raw/master/wespace.png" alt="Database ERD" style="max-width:100%;"></a>
+
 # Contacts
-- If you have any questions or feedback please contact us via email. Thank you.
-- Sangjin Seo: ttwkor@naver.com / Yerin Lee: meekukin@gmail.com
+- If you have any questions or feedback please contact us via email.
+- Sangjin Seo: ttwkor12@gmail.com / Yerin Lee: meekukin@gmail.com
