@@ -1,7 +1,7 @@
 # Introduction
 - [SpaceCloud](https://www.spacecloud.kr/) Cloning.
 - One of the space reservation services in South Korea.
-- Built in two weeks. (23-12-19 ~ 03-01-20)
+- Built in two weeks. (12/23/19 - 01/03/20)
 
 # Built with
 - Python, Django, MySQL, Workbench
