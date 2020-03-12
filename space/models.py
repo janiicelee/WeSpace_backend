@@ -2,7 +2,7 @@ from django.db import models
 from account.models import Hosts, Accounts
 
 
-class Spaces(models.Model):
+class Space(models.Model):
     title = models.CharField(max_length=100)
     short_intro = models.CharField(max_length=200)
     price = models.DecimalField(max_digits=12, decimal_places=2)
@@ -23,7 +23,7 @@ class Spaces(models.Model):
         db_table = 'spaces'
 
 
-class Amenities(models.Model):
+class Amenity(models.Model):
     amenity = models.CharField(max_length=300)
     create_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)
@@ -42,7 +42,7 @@ class Holiday(models.Model):
         db_table = 'holiday'
 
 
-class Space_Categories(models.Model):
+class SpaceCategory(models.Model):
     category = models.CharField(max_length=200)
     create_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)
@@ -51,17 +51,17 @@ class Space_Categories(models.Model):
         db_table = 'space_categories'
 
 
-class Notices(models.Model):
+class Notice(models.Model):
     notice = models.CharField(max_length=300)
     space = models.ForeignKey('Spaces', on_delete=models.SET_NULL, null=True)
     create_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)
 
     class Meta:
-        db_table = 'notice'
+        db_table = 'notices'
 
 
-class Space_Amenities(models.Model):
+class SpaceAmenity(models.Model):
     amenity = models.ForeignKey(
         'Amenities', on_delete=models.SET_NULL, null=True)
     space = models.ForeignKey(
@@ -73,7 +73,7 @@ class Space_Amenities(models.Model):
         db_table = 'space_amenities'
 
 
-class Qeustion(models.Model):
+class Question(models.Model):
     space = models.ForeignKey(
         'Spaces', on_delete=models.SET_NULL, null=True)
     user = models.ForeignKey(
@@ -83,10 +83,10 @@ class Qeustion(models.Model):
     update_at = models.DateTimeField(auto_now=True)
 
     class Mata:
-        db_table = 'question'
+        db_table = 'questions'
 
 
-class Reviews(models.Model):
+class Review(models.Model):
     user = models.ForeignKey(Accounts, on_delete=models.SET_NULL, null=True)
     space = models.ForeignKey(Spaces, on_delete=models.SET_NULL, null=True)
     content = models.TextField()
@@ -98,7 +98,7 @@ class Reviews(models.Model):
         db_table = 'reviews'
 
 
-class Tags(models.Model):
+class Tag(models.Model):
     tag = models.CharField(max_length=30)
     space = models.ForeignKey(Spaces, on_delete=models.SET_NULL, null=True)
     create_at = models.DateTimeField(auto_now_add=True)
@@ -108,7 +108,7 @@ class Tags(models.Model):
         db_table = 'tags'
 
 
-class Images(models.Model):
+class Image(models.Model):
     space_image = models.URLField(max_length=2500)
     space = models.ForeignKey(Spaces, on_delete=models.SET_NULL, null=True)
     create_at = models.DateTimeField(auto_now_add=True)
