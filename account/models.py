@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class Accounts(models.Model):
+class Account(models.Model):
 
     nick_name = models.CharField(max_length=50)
     email = models.CharField(max_length=200, unique=True)
@@ -17,7 +17,7 @@ class Accounts(models.Model):
         db_table = 'accounts'
 
 
-class Hosts(models.Model):
+class Host(models.Model):
     nick_name = models.CharField(max_length=50)
     email = models.CharField(max_length=200, unique=True)
     password = models.CharField(max_length=300)
@@ -29,7 +29,7 @@ class Hosts(models.Model):
         db_table = 'hosts'
 
 
-class Reservations(models.Model):
+class Reservation(models.Model):
     user = models.ForeignKey(
         'Accounts', on_delete=models.SET_NULL, null=True)
     confirm = models.BooleanField(null=True)
@@ -47,7 +47,7 @@ class Reservations(models.Model):
         db_table = 'reservations'
 
 
-class Likes(models.Model):
+class Like(models.Model):
     user = models.ForeignKey('Accounts', on_delete=models.SET_NULL, null=True)
     space = models.ForeignKey(
         'space.Spaces', on_delete=models.SET_NULL, null=True)
