@@ -7,9 +7,6 @@ class Account(models.Model):
     email      = models.CharField(max_length=200, unique=True)
     password   = models.CharField(max_length=300)
     like       = models.ManyToManyField('space.Space', through='Like')
-    nick_name  = models.CharField(max_length=50)
-    email      = models.CharField(max_length=200, unique=True)
-    password   = models.CharField(max_length=300)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
